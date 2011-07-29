@@ -1,0 +1,1 @@
+?-[-'tipo_char.pl', -'open.pl'].
