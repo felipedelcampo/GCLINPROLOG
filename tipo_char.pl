@@ -6,10 +6,8 @@ tipo_char('\n', fim_de_linha).
 tipo_char(end_of_file, fim_de_linha).
 
 %%% Pontuacoes
-tipo_char('.', pontuacao).
 tipo_char('=', pontuacao).
 tipo_char(':', pontuacao).
-tipo_char('-', pontuacao).
 tipo_char(',', pontuacao).
 tipo_char(';', pontuacao).
 tipo_char('(', pontuacao).
@@ -23,13 +21,14 @@ tipo_char('&', pontuacao).
 tipo_char('|', pontuacao).
 tipo_char('~', pontuacao).
 tipo_char('+', pontuacao).
-tipo_char('-', pontuacao).
 tipo_char('*', pontuacao).
 tipo_char('/', pontuacao).
-tipo_char('\\', pontuacao).
-tipo_char('\'', pontuacao).
-tipo_char('"', pontuacao).
 
+tipo_char('-', hifen).
+tipo_char('.', ponto).
+tipo_char('\\', barra_invertida).
+tipo_char('"', aspas).
+tipo_char('\'', aspas_simples).
 
 %%% verifica se eh letra minuscula
 tipo_char(Char, letra) :-
