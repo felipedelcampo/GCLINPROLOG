@@ -29,6 +29,7 @@ tipo_char('.', ponto).
 tipo_char('\\', barra_invertida).
 tipo_char('"', aspas).
 tipo_char('\'', aspas_simples).
+tipo_char('_', underline).
 
 %%% verifica se eh letra minuscula
 tipo_char(Char, letra) :-
