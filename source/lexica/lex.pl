@@ -35,18 +35,18 @@ imprime_mensagens_erro([]).
 imprime_mensagens_erro([H|T]):-
 	imprime_mensagem(H),
 	imprime_mensagens_erro(T).
-	
-	
-
-pega_tipo_token([Tipo|Token], Tipo).
-pega_valor_token([Tipo | [Valor |Token]], Valor).
-pega_posx_token([Tipo | [Valor | [X | Token]]], X).
-pega_posy_token([Tipo | [Valor | [X | [Y | Token]]]], Y).
 
 
 %%%verifica_tokens recebe a lista de tokens, retira espacos, tokens errados e comentarios
 %%% e retorna uma lista de mensagens para imprimir no console em caso de erro
 verifica_tokens([], [], []).
+
+%%% verifica palavras chaves
+verifica_tokens([Token | ListaToken], [NovoToken | NovaListaToken], Erros) :-
+	pega_tipo_token(Token, id),
+	palavra_chave(Token, NovoToken),
+	verifica_tokens(ListaToken, NovaListaToken, Erros).
+
 
 %%% remove comentarios
 verifica_tokens([Token | ListaToken], NovaListaToken, Erros) :-

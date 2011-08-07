@@ -2,6 +2,8 @@
 # Script para iniciar o compilador e processar os argumentos
 
 %%% Carrega Scripts
+?-reconsult('source/token.pl').
+?-reconsult('source/lexica/palavras_chaves.pl').
 ?-reconsult('source/lexica/tipo_char.pl').
 ?-reconsult('source/lexica/lex.pl').
 ?-reconsult('source/lexica/automato.pl').
