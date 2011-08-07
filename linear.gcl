@@ -6,8 +6,9 @@ private
 	typedef integer array [sizer] elements;
 	sizer j;
 	elements A;
-	integer x;
-	[Boolean, integer] result;
+	integer 3x;
+	[Boolean, integer] result; %
+	á 33ab
 
 	proc search (val integer target; val elements B; ref [Boolean, integer] result)
 	integer m; 

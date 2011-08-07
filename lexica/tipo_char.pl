@@ -1,5 +1,5 @@
 tipo_char(' ', espaco).
-tipo_char('\t', espaco).
+tipo_char('\t', tab).
 tipo_char('\r', espaco). %%% para ignorar \r em arquivos gravados no windows 
 
 tipo_char('\n', fim_de_linha).
@@ -29,6 +29,7 @@ tipo_char('.', ponto).
 tipo_char('\\', barra_invertida).
 tipo_char('"', aspas).
 tipo_char('\'', aspas_simples).
+tipo_char('''', aspas_simples).
 tipo_char('_', underline).
 
 %%% verifica se eh letra minuscula
@@ -99,6 +100,3 @@ tipo_char('7', numero).
 tipo_char('8', numero).
 tipo_char('9', numero).
 
-
-%%% tipo nao reconhecido
-tipo_char(_, outro).
