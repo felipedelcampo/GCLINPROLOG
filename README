@@ -1,8 +1,14 @@
 GCLINPROLOG -- Um compilador da linguagem GCL (http://csis.pace.edu/~bergin/compiler/gcl.html) em Prolog.
 
-Uso:
-gcl arquivo.gcl
 
 Atualmente esta implementado apenas a analise lexica
 
+
+Uso:
+gcl arquivo.gcl
+
+
+Requerimentos:
+Yap Prolog (http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html).
+Testado apenas em linux
 
