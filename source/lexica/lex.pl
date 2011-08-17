@@ -3,7 +3,8 @@ compilar(File) :-
 		  see(Stream),
           ler(ListaChar),
           automato(ListaChar, 1, 1, TmpListaToken),
-          verifica_tokens(TmpListaToken, ListaToken, Msg),
+     	  arruma_valores(TmpListaToken, ListaValoresArrumados),
+          verifica_tokens(ListaValoresArrumados, ListaToken, Msg),
           imprime_lista(ListaToken),
           imprime_mensagens_erro(Msg).
           %%%imprime_lista(ListaChar).
@@ -35,6 +36,12 @@ imprime_mensagens_erro([]).
 imprime_mensagens_erro([H|T]):-
 	imprime_mensagem(H),
 	imprime_mensagens_erro(T).
+
+%%%
+arruma_valores([], []).
+arruma_valores([[Tipo, Valor, PosX, PosY] | ListaToken], [[Tipo, NovoValor, PosX, PosY] | NovaListaToken]) :-
+	atom_concat(Valor, NovoValor),
+	arruma_valores(ListaToken, NovaListaToken).
 
 
 %%%verifica_tokens recebe a lista de tokens, retira espacos, tokens errados e comentarios
