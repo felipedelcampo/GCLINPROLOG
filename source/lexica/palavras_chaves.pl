@@ -11,7 +11,7 @@ palavra_chave([_, 'end', PosX, PosY], [palavra_chave, 'end', PosX, PosY]).
 palavra_chave([_, 'const', PosX, PosY], [palavra_chave, 'const', PosX, PosY]).
 palavra_chave([_, 'Boolean', PosX, PosY], [palavra_chave, 'Boolean', PosX, PosY]).
 palavra_chave([_, 'integer', PosX, PosY], [palavra_chave, 'integer', PosX, PosY]).
-palavra_chave([_, 'begin', PosX, PosY, [palavra_chave, 'begin', PosX, PosY]).
+palavra_chave([_, 'begin', PosX, PosY], [palavra_chave, 'begin', PosX, PosY]).
 palavra_chave([_, 'typedef', PosX, PosY], [palavra_chave, 'typedef', PosX, PosY]).
 palavra_chave([_, 'array', PosX, PosY], [palavra_chave, 'array', PosX, PosY]).
 palavra_chave([_, 'range', PosX, PosY], [palavra_chave, 'range', PosX, PosY]).
