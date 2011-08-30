@@ -9,7 +9,8 @@
 ?-reconsult('source/lexica/tipo_char.pl').
 ?-reconsult('source/lexica/lex.pl').
 ?-reconsult('source/lexica/automato.pl').
-?-reconsult('source/sintatica/preditivo.pl').
+?-reconsult('source/sintatica/preditivo.prolog').
+?-reconsult('source/sintatica/tabela_preditiva.prolog').
 
 %%% Executa open.pl/abrir
 main( [] ).

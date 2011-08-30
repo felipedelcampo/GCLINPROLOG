@@ -6,7 +6,9 @@ compilar(File) :-
      	  arruma_valores(TmpListaToken, ListaValoresArrumados),
           verifica_tokens(ListaValoresArrumados, ListaToken, Msg),
           imprime_lista(ListaToken),
-          imprime_mensagens_erro(Msg).
+          imprime_mensagens_erro(Msg),
+	  analise_sintatica(ListaToken, Arvore),
+	  write(Arvore).
           %%%imprime_lista(ListaChar).
           %%%write(ListaToken).
 
