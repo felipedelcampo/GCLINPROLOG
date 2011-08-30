@@ -3,12 +3,12 @@
 
 %%% Carrega Scripts
 ?-t.
-?-reconsult('source/token.pl').
-?-reconsult('source/arvore.pl').
-?-reconsult('source/lexica/palavras_chaves.pl').
-?-reconsult('source/lexica/tipo_char.pl').
-?-reconsult('source/lexica/lex.pl').
-?-reconsult('source/lexica/automato.pl').
+?-reconsult('source/token.prolog').
+?-reconsult('source/arvore.prolog').
+?-reconsult('source/lexica/palavras_chaves.prolog').
+?-reconsult('source/lexica/tipo_char.prolog').
+?-reconsult('source/lexica/lex.prolog').
+?-reconsult('source/lexica/automato.prolog').
 ?-reconsult('source/sintatica/preditivo.prolog').
 ?-reconsult('source/sintatica/tabela_preditiva.prolog').
 
