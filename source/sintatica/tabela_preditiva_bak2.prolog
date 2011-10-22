@@ -176,8 +176,6 @@ tabela_preditiva(naoTerminal('writeItem'), [pontuacao, '(', _, _],[naoTerminal('
 
 tabela_preditiva(naoTerminal('writeItem'), [pontuacao, '~', _, _],[naoTerminal('expression')]).
 
-tabela_preditiva(naoTerminal('writeItem'), [string, _, _, _],[terminal(string)]).
-
 tabela_preditiva(naoTerminal('expressionList'), [pontuacao, '+', _, _],[naoTerminal('expression'),naoTerminal('expressionList_')]).
 
 tabela_preditiva(naoTerminal('expressionList'), [pontuacao, '-', _, _],[naoTerminal('expression'),naoTerminal('expressionList_')]).

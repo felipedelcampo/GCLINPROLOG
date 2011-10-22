@@ -1,5 +1,5 @@
 %%% formato tokens: [Tipo, Valor, PosX, PosY]
-%%% tipos: espaco, id, palavra_chave, inteiro, real, pontuacao, comentario, string, erro, erro_id
+%%% tipos: espaco, id, palavra_chave, inteiro, real, pontuacao, comentario, string, intervalo, erro, erro_id
 
 
 %%% caso base

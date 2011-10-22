@@ -8,7 +8,7 @@ compilar(File) :-
           imprime_lista(ListaToken),
           imprime_mensagens_erro(Msg),
 	  analise_sintatica(ListaToken, Arvore),
-	  write(Arvore).
+	  imprimir_arvore(Arvore).
           %%%imprime_lista(ListaChar).
           %%%write(ListaToken).
 

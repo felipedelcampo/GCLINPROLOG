@@ -1,5 +1,8 @@
+-- Linear search  
 module search  
+private 
+	const size = 10;  
+	
+begin 
 
-	const size =  ;
-	const siz333 = ;
-	.
+ end.  

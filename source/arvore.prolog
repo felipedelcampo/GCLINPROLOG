@@ -30,3 +30,28 @@ popula_teste(Arvore) :-
 
 concat([], Y, Y).
 concat([A|X], Y, [A|Z]) :- concat(X, Y, Z).
+
+imprimir_arvore(arvore(Valor, Filhos)) :- 
+	write(Valor), nl,
+	imprimir_arvore(Filhos, 1).
+	
+imprimir_arvore([arvore(Valor,Filhos)|RestoArvore], X):-
+	imprimir_tabs(X),
+	write(Valor), nl,
+	X1 is X + 1,
+	imprimir_arvore(Filhos, X1),
+	imprimir_arvore(RestoArvore, X).
+	
+imprimir_arvore([], _).
+
+imprimir_tabs(0).	
+
+imprimir_tabs(X):-
+	write(' '),
+	X1 is X - 1,
+	imprimir_tabs(X1).
+
+
+	
+	
+	

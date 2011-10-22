@@ -6,9 +6,7 @@ private
 	typedef integer array [sizer] elements;
 	sizer j;
 	elements A;
-	integer 3x;
-	[Boolean, integer] result; %
-	á 33ab
+	[Boolean, integer] result;
 
 	proc search (val integer target; val elements B; ref [Boolean, integer] result)
 	integer m; 
@@ -28,7 +26,7 @@ private
 					i := i+1; 
 			fi; 
 		od; 
-		result = [found, where];
+		result := [found, where];
 	end;  
 	
 begin 
