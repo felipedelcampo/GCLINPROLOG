@@ -17,8 +17,8 @@ private
 		i:= 1;
 		m := size;
 		found := false;
-		do i <= m -> 
-			if B[i] = target -> 
+		do i <= m ->
+			if B [i] = target -> 
 					found := true; 
 					where := i;
 					i := m + 1;

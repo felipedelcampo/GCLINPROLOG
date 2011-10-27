@@ -11,6 +11,8 @@
 ?-reconsult('source/lexica/automato.prolog').
 ?-reconsult('source/sintatica/preditivo.prolog').
 ?-reconsult('source/sintatica/tabela_preditiva.prolog').
+?-reconsult('source/sintatica/sincronizacao.prolog').
+?-reconsult('source/sintatica/tabela_insercao.prolog').
 
 %%% Executa open.pl/abrir
 main( [] ).

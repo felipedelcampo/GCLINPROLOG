@@ -1,5 +1,5 @@
 %%% formato tokens: [Tipo, Valor, PosX, PosY]
-%%% tipos: espaco, id, palavra_chave, inteiro, real, pontuacao, comentario, string, intervalo, erro, erro_id
+%%% tipos: espaco, id, palavra_chave, inteiro, real, pontuacao, comentario, string, intervalo, erro, erro_id, flecha
 
 
 %%% caso base
@@ -64,6 +64,24 @@ muda_estado(s2, [Char|ListaChar], X , Y, TipoToken, [Char | Token], NovaListaCha
 	tipo_char(Char, numero), 
 	X1 is X + 1, 
 	muda_estado(s2, ListaChar, X1, Y, TipoToken, Token, NovaListaChar, NovoX, NovoY).
+	
+muda_estado(s2, ['('|ListaChar], X , Y, id_proc, [], ['('|ListaChar], X, Y).
+
+muda_estado(s2, [Char|ListaChar], X , Y, TipoToken, [], [Char|NovaListaChar], X, Y):-
+	tipo_char(Char, espaco), 
+	muda_estado(s98, ListaChar, X, Y, TipoToken, Token, NovaListaChar, X, Y).	
+
+muda_estado(s2, [Char|ListaChar], X , Y, TipoToken, [], [Char|NovaListaChar], X, Y):-
+	tipo_char(Char, fim_de_linha), 
+	muda_estado(s98, ListaChar, X, Y, TipoToken, Token, NovaListaChar, X, Y).
+
+muda_estado(s2, [Char|ListaChar], X , Y, TipoToken, [], [Char|NovaListaChar], X, Y):-
+	tipo_char(Char, tab), 
+	muda_estado(s98, ListaChar, X, Y, TipoToken, Token, NovaListaChar, X, Y).
+
+muda_estado(s98, ['('|ListaChar], X , Y, id_proc, [], ['('|ListaChar], X, Y).
+
+muda_estado(s98, ListaChar, X, Y, id, [], ListaChar, X, Y ).
 
 muda_estado(s2, ListaChar, X, Y, id, [], ListaChar, X, Y ).
 
@@ -146,7 +164,13 @@ muda_estado(s5, [Char|ListaChar], X , Y, TipoToken, [Char | Token], NovaListaCha
 	X1 is X + 1, 
 	muda_estado(s6, ListaChar, X1, Y, TipoToken, Token, NovaListaChar, NovoX, NovoY).
 
+muda_estado(s5, ['>'|ListaChar], X, Y, TipoToken, ['>' | Token], NovaListaChar, NovoX, NovoY):-
+	X1 is X + 1,
+	muda_estado(s99, ListaChar, X1, Y, TipoToken, Token, NovaListaChar, NovoX, NovoY).
+
 muda_estado(s5, ListaChar, X, Y, pontuacao, [], ListaChar, X, Y ).
+
+muda_estado(s99, ListaChar, X, Y, flecha, [], ListaChar, X, Y ).
 
 muda_estado(s6, [Char|ListaChar], X, Y, comentario, [], [Char|ListaChar], X, Y ):-
 	tipo_char(Char, fim_de_linha).
@@ -154,6 +178,8 @@ muda_estado(s6, [Char|ListaChar], X, Y, comentario, [], [Char|ListaChar], X, Y )
 muda_estado(s6, [Char|ListaChar], X , Y, TipoToken, [Char | Token], NovaListaChar, NovoX, NovoY):-
 	X1 is X + 1, 
 	muda_estado(s6, ListaChar, X1, Y, TipoToken, Token, NovaListaChar, NovoX, NovoY).
+	
+
 
 %%verifica intervalo
 muda_estado(s1, [Char|ListaChar], X , Y, TipoToken, [Char | Token], NovaListaChar, NovoX, NovoY):-
